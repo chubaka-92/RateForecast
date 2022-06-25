@@ -1,5 +1,6 @@
 package ru.liga.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
@@ -9,37 +10,36 @@ import java.util.Locale;
  * класс Course
  */
 public class Course {
-    private double nominal;
-    private LocalDate day;
-    private double cours;
+    private final int nominal;
+    private final LocalDate day;
+    private final BigDecimal cours;
 
-    public Course(double nominal, LocalDate nextDay, double cours) {
+    public Course(int nominal, LocalDate nextDay, BigDecimal cours) {
         this.nominal = nominal;
         this.day = nextDay;
         this.cours = cours;
     }
 
     public Course() {
-
-    }
-
-    public double getNominal() {
-        return nominal;
+        cours = null;
+        day = null;
+        nominal = 0;
     }
 
     public LocalDate getDay() {
         return day;
     }
 
-    public double getCours() {
-        return cours;
+
+    public BigDecimal getOneCoinCourse(){
+        return cours.divide(BigDecimal.valueOf(nominal));
     }
 
 
     /**
      * Метод getWeekDay возвращает день недели в формате Пн,Вт,Ср,...
      */
-    public String getWeekDay(LocalDate day) {
+    private String getWeekDay(LocalDate day) {
         String tempDayWeek = day.getDayOfWeek()
                 .getDisplayName(TextStyle.SHORT, new Locale("ru", "RU"));
         return tempDayWeek.substring(0, 1).toUpperCase() + tempDayWeek.substring(1);
@@ -50,6 +50,6 @@ public class Course {
 
         return getWeekDay(day) + " "
                 + day.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
-                + " - " + String.format("%.2f", cours / nominal);
+                + " - " + String.format("%.2f", getOneCoinCourse());
     }
 }
