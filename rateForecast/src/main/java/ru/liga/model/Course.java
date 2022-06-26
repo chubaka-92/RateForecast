@@ -8,6 +8,10 @@ import java.util.Locale;
 
 /**
  * класс Course
+ * содержит в себе информаци о стоимости монет:
+ * количество единиц - nominal
+ * день - day
+ * стоимостью монет - cours
  */
 public class Course {
     private final int nominal;
@@ -20,23 +24,22 @@ public class Course {
         this.cours = cours;
     }
 
-    public Course() {
-        cours = null;
-        day = null;
-        nominal = 0;
-    }
-
+    /**
+     * getDay возвращает день курса
+     * */
     public LocalDate getDay() {
         return day;
     }
 
-
+    /**
+     * getOneCoinCourse возвращает стоисмость валюты за еденицу
+     * */
     public BigDecimal getOneCoinCourse(){
         return cours.divide(BigDecimal.valueOf(nominal));
     }
 
 
-    /**
+    /*
      * Метод getWeekDay возвращает день недели в формате Пн,Вт,Ср,...
      */
     private String getWeekDay(LocalDate day) {

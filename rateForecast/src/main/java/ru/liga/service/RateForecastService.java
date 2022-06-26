@@ -1,10 +1,10 @@
-package ru.liga;
+package ru.liga.service;
 
 import ru.liga.model.Command;
+import ru.liga.enums.Commands;
 import ru.liga.model.Course;
 import ru.liga.model.ReadMapperCourse;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
@@ -12,32 +12,21 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Курс валюты на завтра
- * "rate TRY tomorrow" Вт 22.02.2022 - 6,11;
- * Курс валюты на 7 дней
- * "rate USD week"
- * Вт 22.02.2022 - 75,45
- * Ср 23.02.2022 - 76,12
- * Чт 24.02.2022 - 77,34
- * Пт 25.02.2022 - 78,23
- * Сб 26.02.2022 - 80,11
- * Вс 27.02.2022 - 82,10
- * Пн 28.02.2022 - 90,45
+ * Класс RateForecastService в который формирует расчет курса валюты.
+ *
+ *  на вход подается Command command
  */
 
 
 public class RateForecastService {
-
-    private final String RATE_TOMORROW = "tomorrow";
-    private final String RATE_WEEK = "week";
-    private List<Course> courseList;
+    private final List<Course> courseList;
     private final Command command;
-    public RateForecastService(Command command) throws IOException {
+    public RateForecastService(Command command){
         this.command = command;
-        this.courseList = new ReadMapperCourse(command.getCurrency()).getCourseList();
+        this.courseList = new ReadMapperCourse(command.getCurrency()).getCourseListFromFile();
     }
 
-    /**
+    /*
      * расчет курса валюты на завтра
      */
     private Course rateForecastTomorrow() {
@@ -49,7 +38,7 @@ public class RateForecastService {
         return courseList.get(0);
     }
 
-    /**
+    /*
      * Добавление нового курса в courseList
      * <p>
      * 1) получаем  новую стоимость валюты
@@ -63,7 +52,7 @@ public class RateForecastService {
         this.courseList.remove(7);
     }
 
-    /**
+    /*
      * расчет курса валюты на следующий день
      */
     private BigDecimal getNewRate(List<Course> courseList) {
@@ -76,7 +65,7 @@ public class RateForecastService {
         return resRate;
     }
 
-    /**
+    /*
      * расчет курса валюты на неделю
      */
     private List<Course> rateForecastToWeek() {
@@ -90,11 +79,14 @@ public class RateForecastService {
         return courseList;
     }
 
+    /**
+     * Метод отображает курс валют
+     */
     public void rateForecast(){
-        if (command.getCommand().equals(RATE_TOMORROW)) {
+        if (command.getCommand().equals(Commands.tomorrow.name())) {
             System.out.println(rateForecastTomorrow());
 
-        } else if (command.getCommand().equals(RATE_WEEK)) {
+        } else if (command.getCommand().equals(Commands.week.name())) {
             for (Course cr : rateForecastToWeek()) {
                 System.out.println(cr);
             }

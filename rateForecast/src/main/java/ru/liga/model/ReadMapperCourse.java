@@ -12,17 +12,12 @@ import java.util.List;
 public class ReadMapperCourse {
 
     private final String currency;
-    private final String pathFile;
 
-    private List<Course> courseList;
-
-    public ReadMapperCourse(String currency) throws IOException {
+    public ReadMapperCourse(String currency){
         this.currency = currency;
-        this.pathFile = getPathFile();
-        this.courseList = mapCourseListFromFile();
     }
 
-    /**
+    /*
      * Метод getPathFile выбирает путь до фала в зависимости от валюты
      */
     private String getPathFile() {
@@ -32,41 +27,37 @@ public class ReadMapperCourse {
             return "src\\main\\resources\\RC_F01_06_2002_T18_06_2022_EUR.csv";
         } else if (currency.equals("TRY")) {
             return "src\\main\\resources\\RC_F01_06_2002_T18_06_2022_TRY.csv";
+        } else {
+            throw new RuntimeException("Файл для валюты "+ currency +" не определена");
         }
-        return "";
     }
 
 
     /**
      * Метод getCourseListFromFile читает 7 запис из файла с информацией о курсах
-     * лист из 7 последних записей курса
+     * И возвращает лист из 7 последних записей курса
      */
-    private List<Course> mapCourseListFromFile() throws IOException {
-        BufferedReader csvReader = new BufferedReader(new FileReader(pathFile));
+    public List<Course> getCourseListFromFile() {
+        try {
+            List<Course> list= new ArrayList<>();
+            String row = "";
+            int countStr = 0;
+            BufferedReader csvReader = new BufferedReader(new FileReader(getPathFile()));
+            csvReader.readLine(); // пропускаем первую строку файла с описанием колонок
+            while ((row = csvReader.readLine()) != null && countStr < 7) {
 
-        List<Course> list= new ArrayList<>();
-        String row = "";
-        int countStr = 0;
+                String[] data = row.split(";");
 
-        csvReader.readLine(); // пропускаем первую строку файла с описанием колонок
-        while ((row = csvReader.readLine()) != null && countStr < 7) {
+                list.add(new Course(Integer.parseInt(data[0].replace(" ", "")),
+                        LocalDate.parse(data[1], DateTimeFormatter.ofPattern("dd.MM.yyyy")),
+                        BigDecimal.valueOf(Double.parseDouble((data[2].substring(2, data[2].length() - 1).replace(",", "."))))));
 
-            String[] data = row.split(";");
-
-            list.add(new Course(Integer.parseInt(data[0].replace(" ", "")),
-                    LocalDate.parse(data[1], DateTimeFormatter.ofPattern("dd.MM.yyyy")),
-                    BigDecimal.valueOf(Double.parseDouble((data[2].substring(2, data[2].length() - 1).replace(",", "."))))));
-
-            countStr++;
+                countStr++;
+            }
+            csvReader.close();
+            return list;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        csvReader.close();
-        return list;
     }
-
-     public List<Course> getCourseList() {
-        return this.courseList;
-    }
-
-
-
 }
