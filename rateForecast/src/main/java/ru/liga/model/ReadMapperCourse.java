@@ -11,9 +11,10 @@ import java.util.List;
 
 public class ReadMapperCourse {
 
+    private final String RESOURCES = "src\\main\\resources\\";
     private final String currency;
 
-    public ReadMapperCourse(String currency){
+    public ReadMapperCourse(String currency) {
         this.currency = currency;
     }
 
@@ -22,13 +23,13 @@ public class ReadMapperCourse {
      */
     private String getPathFile() {
         if (currency.equals("USD")) {
-            return "src\\main\\resources\\RC_F01_06_2002_T18_06_2022_USD.csv";
+            return RESOURCES + "RC_F01_06_2002_T18_06_2022_USD.csv";
         } else if (currency.equals("EUR")) {
-            return "src\\main\\resources\\RC_F01_06_2002_T18_06_2022_EUR.csv";
+            return RESOURCES + "RC_F01_06_2002_T18_06_2022_EUR.csv";
         } else if (currency.equals("TRY")) {
-            return "src\\main\\resources\\RC_F01_06_2002_T18_06_2022_TRY.csv";
+            return RESOURCES + "RC_F01_06_2002_T18_06_2022_TRY.csv";
         } else {
-            throw new RuntimeException("Файл для валюты "+ currency +" не определена");
+            throw new RuntimeException("Файл для валюты " + currency + " не определена");
         }
     }
 
@@ -36,10 +37,12 @@ public class ReadMapperCourse {
     /**
      * Метод getCourseListFromFile читает 7 запис из файла с информацией о курсах
      * И возвращает лист из 7 последних записей курса
+     *
+     * @return List<Course> список курсов
      */
     public List<Course> getCourseListFromFile() {
         try {
-            List<Course> list= new ArrayList<>();
+            List<Course> list = new ArrayList<>();
             String row = "";
             int countStr = 0;
             BufferedReader csvReader = new BufferedReader(new FileReader(getPathFile()));

@@ -1,9 +1,9 @@
 package ru.liga.service;
 
 import ru.liga.model.Command;
-import ru.liga.enums.Commands;
 import ru.liga.model.Course;
 import ru.liga.model.ReadMapperCourse;
+import ru.liga.types.Commands;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -13,15 +13,16 @@ import java.util.List;
 
 /**
  * Класс RateForecastService в который формирует расчет курса валюты.
- *
- *  на вход подается Command command
+ * <p>
+ * на вход подается Command command
  */
 
 
 public class RateForecastService {
     private final List<Course> courseList;
     private final Command command;
-    public RateForecastService(Command command){
+
+    public RateForecastService(Command command) {
         this.command = command;
         this.courseList = new ReadMapperCourse(command.getCurrency()).getCourseListFromFile();
     }
@@ -82,11 +83,11 @@ public class RateForecastService {
     /**
      * Метод отображает курс валют
      */
-    public void rateForecast(){
-        if (command.getCommand().equals(Commands.tomorrow.name())) {
+    public void rateForecast() {
+        if (command.getCommand().equals(Commands.TOMORROW.name())) {
             System.out.println(rateForecastTomorrow());
 
-        } else if (command.getCommand().equals(Commands.week.name())) {
+        } else if (command.getCommand().equals(Commands.WEEK.name())) {
             for (Course cr : rateForecastToWeek()) {
                 System.out.println(cr);
             }

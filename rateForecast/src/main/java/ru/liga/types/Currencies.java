@@ -1,4 +1,4 @@
-package ru.liga.enums;
+package ru.liga.types;
 
 /**
  * Типы валют
