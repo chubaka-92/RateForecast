@@ -41,6 +41,13 @@ public class Course {
         return cours.divide(BigDecimal.valueOf(nominal));
     }
 
+    @Override
+    public String toString() {
+
+        return getWeekDay(day) + " "
+                + day.format(FORMAT_DATE)
+                + " - " + String.format("%.2f", getOneCoinCourse());
+    }
 
     /*
      * Метод getWeekDay возвращает день недели в формате Пн,Вт,Ср,...
@@ -49,13 +56,5 @@ public class Course {
         String tempDayWeek = day.getDayOfWeek()
                 .getDisplayName(TextStyle.SHORT, new Locale("ru", "RU"));
         return tempDayWeek.substring(0, 1).toUpperCase() + tempDayWeek.substring(1);
-    }
-
-    @Override
-    public String toString() {
-
-        return getWeekDay(day) + " "
-                + day.format(FORMAT_DATE)
-                + " - " + String.format("%.2f", getOneCoinCourse());
     }
 }

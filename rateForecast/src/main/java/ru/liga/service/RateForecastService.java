@@ -27,6 +27,23 @@ public class RateForecastService {
         this.courseList = new ReadMapperCourse(command.getCurrency()).getCourseListFromFile();
     }
 
+    /**
+     * Метод отображает курс валют
+     */
+    public void rateForecast() {
+        if (command.getCommand().equals(Commands.TOMORROW.getLowerCommand())) {
+            System.out.println(rateForecastTomorrow());
+
+        } else if (command.getCommand().equals(Commands.WEEK.getLowerCommand())) {
+            for (Course cr : rateForecastToWeek()) {
+                System.out.println(cr);
+            }
+
+        } else {
+            System.out.println("мая не панимать какой прогноз твая хатеть");
+        }
+    }
+
     /*
      * расчет курса валюты на завтра
      */
@@ -79,23 +96,4 @@ public class RateForecastService {
         courseList.sort(Comparator.comparing(Course::getDay));
         return courseList;
     }
-
-    /**
-     * Метод отображает курс валют
-     */
-    public void rateForecast() {
-        if (command.getCommand().equals(Commands.TOMORROW.name())) {
-            System.out.println(rateForecastTomorrow());
-
-        } else if (command.getCommand().equals(Commands.WEEK.name())) {
-            for (Course cr : rateForecastToWeek()) {
-                System.out.println(cr);
-            }
-
-        } else {
-            System.out.println("мая не панимать какой прогноз твая хатеть");
-        }
-    }
-
-
 }

@@ -18,34 +18,19 @@ public class ReadMapperCourse {
         this.currency = currency;
     }
 
-    /*
-     * Метод getPathFile выбирает путь до фала в зависимости от валюты
-     */
-    private String getPathFile() {
-        if (currency.equals("USD")) {
-            return RESOURCES + "RC_F01_06_2002_T18_06_2022_USD.csv";
-        } else if (currency.equals("EUR")) {
-            return RESOURCES + "RC_F01_06_2002_T18_06_2022_EUR.csv";
-        } else if (currency.equals("TRY")) {
-            return RESOURCES + "RC_F01_06_2002_T18_06_2022_TRY.csv";
-        } else {
-            throw new RuntimeException("Файл для валюты " + currency + " не определена");
-        }
-    }
-
-
     /**
      * Метод getCourseListFromFile читает 7 запис из файла с информацией о курсах
      * И возвращает лист из 7 последних записей курса
      *
      * @return List<Course> список курсов
      */
-    public List<Course> getCourseListFromFile() {
-        try {
+    public List<Course> getCourseListFromFile(){
+        //BufferedReader csvReader = null;
+        try (BufferedReader csvReader = new BufferedReader(new FileReader(getFilePath()))){
             List<Course> list = new ArrayList<>();
             String row = "";
             int countStr = 0;
-            BufferedReader csvReader = new BufferedReader(new FileReader(getPathFile()));
+            //csvReader = new BufferedReader(new FileReader(getFilePath()));
             csvReader.readLine(); // пропускаем первую строку файла с описанием колонок
             while ((row = csvReader.readLine()) != null && countStr < 7) {
 
@@ -57,10 +42,25 @@ public class ReadMapperCourse {
 
                 countStr++;
             }
-            csvReader.close();
             return list;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
+    /*
+     * Метод getPathFile выбирает путь до фала в зависимости от валюты
+     */
+    private String getFilePath() {
+        if (currency.equals("USD")) {
+            return RESOURCES + "RC_F01_06_2002_T18_06_2022_USD.csv";
+        } else if (currency.equals("EUR")) {
+            return RESOURCES + "RC_F01_06_2002_T18_06_2022_EUR.csv";
+        } else if (currency.equals("TRY")) {
+            return RESOURCES + "RC_F01_06_2002_T18_06_2022_TRY.csv";
+        } else {
+            throw new RuntimeException("Файл для валюты " + currency + " не определена");
+        }
+    }
+
 }
