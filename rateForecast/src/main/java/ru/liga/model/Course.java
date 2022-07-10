@@ -11,6 +11,8 @@ import java.util.Locale;
  * содержит в себе информаци о стоимости монет
  */
 public class Course {
+
+    //private static final Logger logger = LoggerFactory.getLogger(Course.class); если настроить логирование на этом классе,то будет много спама.пока оставлю так
     private final DateTimeFormatter FORMAT_DATE = DateTimeFormatter.ofPattern("dd.MM.yyyy");
     private final int nominal;
     private final LocalDate day;
@@ -39,6 +41,24 @@ public class Course {
      */
     public BigDecimal getOneCoinCourse() {
         return cours.divide(BigDecimal.valueOf(nominal));
+    }
+
+    /**
+     * getNominal количество монет
+     *
+     * @return int nominal
+     */
+    public int getNominal() {
+        return nominal;
+    }
+
+    /**
+     * getCours возвращает стоимость монет(курс)
+     *
+     * @return BigDecimal cours
+     */
+    public BigDecimal getCours() {
+        return cours;
     }
 
     @Override

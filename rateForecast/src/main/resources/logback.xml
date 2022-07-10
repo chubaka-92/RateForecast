@@ -1,0 +1,26 @@
+<configuration>
+
+    <property name="LOG_DIR" value="src/main/resources/logs" />
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/logFile.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${LOG_DIR}/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 1 days' worth of history -->
+            <maxHistory>7</maxHistory>
+            <totalSizeCap>5MB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS}  %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info" additivity="false">
+        <appender-ref ref="FILE"/>
+    </root>
+    <root level="debug" additivity="false">
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

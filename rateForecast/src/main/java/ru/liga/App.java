@@ -1,21 +1,17 @@
 package ru.liga;
 
-import ru.liga.model.Command;
-import ru.liga.service.RateForecastService;
-
-import java.util.Scanner;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
+import ru.liga.tgbot.Bot;
 
 public class App {
-    public static void main(String[] args){
-        System.out.println("Введите команду 'rate TRY tomorrow' чтоб узнать курс на завтра");
-        System.out.println("либо 'rate USD week' чтоб узнать курс на неделю");
-        System.out.println("Достуные валюты: USD, EUR, TRY.");
-
-        Scanner sc = new Scanner(System.in);
-
-        new RateForecastService(new Command(sc.nextLine())).rateForecast();
-
-        sc.close();
-
+    public static void main(String[] args) {
+        try {
+            TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
+            botsApi.registerBot(new Bot("CourseMaker_bot", "5503866677:AAH3kRFjoKJZVo8OWU2MgcxkOee1EI3P-5Q"));
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
     }
 }
