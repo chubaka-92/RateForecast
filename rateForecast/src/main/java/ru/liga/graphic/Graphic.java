@@ -39,7 +39,6 @@ public class Graphic {
     }
 
     public XYDataset setDataset(Map<String, List<Course>> courses) {
-        logger.debug("Подготовка данных для расчета графика курса валют");
         logger.info("Подготовка данных для расчета графика курса валют");
         for (Map.Entry<String, List<Course>> coursesEntity : courses.entrySet()) {
             TimeSeries s = new TimeSeries(coursesEntity.getKey());
@@ -87,7 +86,6 @@ public class Graphic {
 
     @SneakyThrows
     public File getCurrencyRatesAsGraph() {
-        logger.debug("Формирование графика курса валют");
         logger.info("Формирование графика курса валют");
         JFreeChart chart = createChart(dataset);
         chart.setPadding(new RectangleInsets(4, 8, 2, 2));

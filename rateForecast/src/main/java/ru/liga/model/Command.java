@@ -92,7 +92,6 @@ public class Command {
      * @return String алгоритм
      */
     public String getAlg() {
-        logger.debug("Определение алгоритма для расчета курса");
         logger.info("Определение алгоритма для расчета курса");
         StringBuilder alg = new StringBuilder();
         for (int i = 1; i < arrAction.length; i++) {
@@ -112,7 +111,6 @@ public class Command {
      * @return String формат
      */
     public String getOutPut() {
-        logger.debug("Определение формата результата");
         logger.info("Определение формата результата");
         for (int i = 1; i < arrAction.length; i++) {
             if (arrAction[i].equals(Commands.OUTPUT.getLowerCommand())) {

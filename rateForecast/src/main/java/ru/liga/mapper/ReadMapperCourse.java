@@ -32,7 +32,6 @@ public class ReadMapperCourse {
      */
     public List<Course> getCourseListFromFile(int countRows) {
         logger.info("Начало подготовки исторических данных по руксам валют");
-        logger.debug("Начало подготовк исторических данных по руксам валют");
         try (BufferedReader csvReader = new BufferedReader(new FileReader(getFilePath()))) {
             List<Course> list = new ArrayList<>();
             String row = "";
@@ -47,7 +46,6 @@ public class ReadMapperCourse {
                 countStr++;
             }
             logger.info("Подготовка исторических данных по руксам валют завершена");
-            logger.debug("Подготовка исторических данных по руксам валют завершена");
             return list;
         } catch (IOException e) {
             throw new RuntimeException(e);

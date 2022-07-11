@@ -21,7 +21,6 @@ public class LastYearsAlg {
 
     public List<Course> rateForecast() {
         logger.info("Расчет прогноза курса по алгоритму LastYears");
-        logger.debug("Расчет прогноза курса по алгоритму LastYears");
         List<Course> result = new ArrayList<>();
         for (int i = 0; i < dates.size(); i++) {
             LocalDate tempDate = dates.get(i).minusYears(1);

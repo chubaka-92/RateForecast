@@ -22,7 +22,6 @@ public class MysticalAlg {
 
     public List<Course> rateForecast() {
         logger.info("Расчет прогноза курса по алгоритму Mystical");
-        logger.debug("Расчет прогноза курса по алгоритму Mystical");
 
         List<Course> result = new ArrayList<>();
         if (dates.size() == 1) {

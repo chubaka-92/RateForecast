@@ -22,8 +22,6 @@ public class LinearRegressionAlg {
 
     public List<Course> rateForecast() {
         logger.info("Расчет прогноза курса по алгоритму Mystical");
-        logger.debug("Расчет прогноза курса по алгоритму Mystical");
-
         List<Course> result = new ArrayList<>();
         if (dates.size() == 1) {
             while (dates.get(0).isAfter(courseList.get(0).getDay())) {

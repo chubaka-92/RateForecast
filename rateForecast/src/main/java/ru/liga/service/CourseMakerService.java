@@ -28,7 +28,6 @@ public class CourseMakerService {
     }
 
     public Map<String, List<Course>> forecastingСourses() {
-        logger.debug("Начало процесса вычесления прогноза курса");
         logger.info("Начало процесса вычесления прогноза курса");
         Map<String, List<Course>> coursesAll = new HashMap<>();
         List<Course> courses = new ArrayList<>();
@@ -60,7 +59,6 @@ public class CourseMakerService {
         if (command.getOutPut() != null && command.getOutPut().equals(Commands.GRAPHIC.getLowerCommand())) {
             createGraphic(coursesAll);
         }
-        logger.debug("Конец процесса вычесления прогноза курса");
         logger.info("Конец процесса вычесления прогноза курса");
         return coursesAll;
     }

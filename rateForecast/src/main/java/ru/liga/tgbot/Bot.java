@@ -25,7 +25,6 @@ public final class Bot extends TelegramLongPollingCommandBot {
 
     public Bot(String botName, String botToken) {
         super();
-        logger.debug("создание бота");
         logger.info("создание бота");
         this.BOT_NAME = botName;
         this.BOT_TOKEN = botToken;
@@ -55,7 +54,6 @@ public final class Bot extends TelegramLongPollingCommandBot {
     @Override
     public void processNonCommandUpdate(Update update) {
         logger.info("Обработка запроса начата");
-        logger.debug("Обработка запроса начата");
         Message msg = update.getMessage();
         Long chatId = msg.getChatId();
         String userName = getUserName(msg);
@@ -76,7 +74,6 @@ public final class Bot extends TelegramLongPollingCommandBot {
         }
 
         logger.info("Обработка запроса закончена");
-        logger.debug("Обработка запроса закончена");
     }
 
     /**
@@ -85,11 +82,9 @@ public final class Bot extends TelegramLongPollingCommandBot {
      * @param msg сообщение
      */
     private String getUserName(Message msg) {
-        logger.info("getUserName Start");
         logger.debug("getUserName Start");
         User user = msg.getFrom();
         String userName = user.getUserName();
-        logger.info(" getUserName end");
         logger.debug(" getUserName end");
         return (userName != null) ? userName : String.format("%s %s", user.getLastName(), user.getFirstName());
     }
@@ -102,7 +97,6 @@ public final class Bot extends TelegramLongPollingCommandBot {
      * @param text     текст ответа
      */
     private void setAnswer(Long chatId, String userName, String text) {
-        logger.info("setAnswer Start");
         logger.debug("setAnswer Start");
         SendMessage answer = new SendMessage();
         answer.setText(text);
@@ -112,8 +106,7 @@ public final class Bot extends TelegramLongPollingCommandBot {
         } catch (TelegramApiException e) {
             logger.debug("Не удалось отправить сообщение: " + e.getMessage());
         }
-        logger.info(" setAnswer end");
-        logger.debug(" setAnswer end");
+        logger.debug("setAnswer end");
     }
 
     /**
@@ -136,10 +129,8 @@ public final class Bot extends TelegramLongPollingCommandBot {
     @Override
     public void onUpdatesReceived(List<Update> updates) {
         logger.info("onUpdatesReceived Start");
-        logger.debug("onUpdatesReceived Start");
         super.onUpdatesReceived(updates);
-        logger.info(" onUpdatesReceived end");
-        logger.debug(" onUpdatesReceived end");
+        logger.info("onUpdatesReceived end");
 
     }
 }

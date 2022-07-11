@@ -34,7 +34,6 @@ public class SevenDaysAlg {
      */
     public List<Course> rateForecast() {
         logger.info("Расчет прогноза курса по алгоритму SevenDays");
-        logger.debug("Расчет прогноза курса по алгоритму SevenDays");
         List<Course> result = new ArrayList<>();
         if (dates.size() == 1) {
             while (dates.get(0).isAfter(courseList.get(0).getDay())) {
