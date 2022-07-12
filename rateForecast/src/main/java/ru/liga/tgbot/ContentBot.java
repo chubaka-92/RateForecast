@@ -71,7 +71,7 @@ public class ContentBot {
         logger.debug("setChatId was called. Определение Id чата для отправки сообщения: " + chatId);
         if (messageText != null) {
             messageText.setChatId(chatId);
-        } else {
+        } else {                            // можно без else но с return
             photo.setChatId(chatId);
         }
     }

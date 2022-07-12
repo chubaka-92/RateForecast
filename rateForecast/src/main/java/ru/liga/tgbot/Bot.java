@@ -20,8 +20,8 @@ import java.util.Map;
 
 public final class Bot extends TelegramLongPollingCommandBot {
     private static final Logger logger = LoggerFactory.getLogger(TelegramLongPollingCommandBot.class);
-    private final String BOT_NAME;
-    private final String BOT_TOKEN;
+    private final String BOT_NAME;  // зачем большими буквами это не константа?
+    private final String BOT_TOKEN; // зачем большими буквами это не константа?
 
     public Bot(String botName, String botToken) {
         super();
@@ -96,7 +96,7 @@ public final class Bot extends TelegramLongPollingCommandBot {
      * @param userName имя пользователя
      * @param text     текст ответа
      */
-    private void setAnswer(Long chatId, String userName, String text) {
+    private void setAnswer(Long chatId, String userName, String text) { //userName не используется
         logger.debug("setAnswer Start");
         SendMessage answer = new SendMessage();
         answer.setText(text);

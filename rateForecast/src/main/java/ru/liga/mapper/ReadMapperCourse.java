@@ -56,7 +56,7 @@ public class ReadMapperCourse {
      * Метод getPathFile выбирает путь до фала в зависимости от валюты
      */
     private String getFilePath() {
-        logger.debug("Определение пути до файла с историей курсов валют");
+        logger.debug("Определение пути до файла с историей курсов валют");  // можно через switch -> case
         if (currency.equals("USD")) {
             return RESOURCES + "USD_RC_F01_02_2005_T02_07_2022.csv";
         } else if (currency.equals("EUR")) {
