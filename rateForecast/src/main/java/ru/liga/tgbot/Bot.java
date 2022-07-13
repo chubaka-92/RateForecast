@@ -20,21 +20,21 @@ import java.util.Map;
 
 public final class Bot extends TelegramLongPollingCommandBot {
     private static final Logger logger = LoggerFactory.getLogger(TelegramLongPollingCommandBot.class);
-    private final String BOT_NAME;
-    private final String BOT_TOKEN;
+    private final String botName;
+    private final String botToken;
 
     public Bot(String botName, String botToken) {
         super();
         logger.info("создание бота");
-        this.BOT_NAME = botName;
-        this.BOT_TOKEN = botToken;
+        this.botName = botName;
+        this.botToken = botToken;
         register(new StartCommand("start", "Старт"));
         register(new HelpCommand("help", "Помощь"));
     }
 
     @Override
     public String getBotToken() {
-        return BOT_TOKEN;
+        return botToken;
     }
 
     @Override
@@ -44,7 +44,7 @@ public final class Bot extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotUsername() {
-        return BOT_NAME;
+        return botName;
     }
 
 
@@ -70,7 +70,7 @@ public final class Bot extends TelegramLongPollingCommandBot {
             setAnswer(contentBot);
         } catch (Exception e) {
             logger.debug("ERROR: " + e.getMessage());
-            setAnswer(chatId, userName, e.getMessage());
+            setAnswer(chatId, e.getMessage());
         }
 
         logger.info("Обработка запроса закончена");
@@ -93,10 +93,9 @@ public final class Bot extends TelegramLongPollingCommandBot {
      * Отправка ответа
      *
      * @param chatId   id чата
-     * @param userName имя пользователя
      * @param text     текст ответа
      */
-    private void setAnswer(Long chatId, String userName, String text) {
+    private void setAnswer(Long chatId, String text) {
         logger.debug("setAnswer Start");
         SendMessage answer = new SendMessage();
         answer.setText(text);

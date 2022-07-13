@@ -17,15 +17,13 @@ public class HelpCommand extends ServiceCommand {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         logger.info("Вызван /help");
-        String userName = (user.getUserName() != null) ? user.getUserName() :
-                String.format("%s %s", user.getLastName(), user.getFirstName());
-        sendAnswer(absSender, chat.getId(), this.getCommandIdentifier(), userName,
+        sendAnswer(absSender, chat.getId(),
                 "Чтоб получить тот или иной курс тебе нужно ввести: \n" +
                         "1) Первое слово 'rate'\n" +
                         "2) Валюта. Пока на выбор доступны (USD, EUR, TRY, AMD и BGN)\n" +
                         "3) Если хочешь курс на завтра то пиши '-date tomorrow' " +
                         "если на конкретную дату то '-date 15.07.22', ЛИБО можешь указать прогноз на период '-period week/month'\n" +
-                        "4) укажи алгоритм расчета '-alg sevendays/lastyears/myst/linear'\n" +
+                        "4) укажи алгоритм расчета '-alg sevendays/lastyears/myst/linereg'\n" +
                         "5) Если указал период week или month то можно вывести курс в формате списка '-output list' либо постоить график'-output graphic'\n" +
                         "\n" +
                         "Примеры готовых команд: rate USD -date tomorrow -alg sevenday\n" +

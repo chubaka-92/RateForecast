@@ -24,6 +24,8 @@ public class SevenDaysAlg {
     private final List<Course> courseList;
     private final List<LocalDate> dates;
 
+    private static final int WEEK_COUNT_DAYS = 7;
+
     public SevenDaysAlg(List<LocalDate> dates, List<Course> courseSourse) {
         this.dates = dates;
         this.courseList = courseSourse;
@@ -63,7 +65,7 @@ public class SevenDaysAlg {
         logger.debug("Добавление нового курса");
         BigDecimal resRate = getNewRate(this.courseList);
         this.courseList.add(0, new Course(1, this.courseList.get(0).getDay().plusDays(1), resRate));
-        this.courseList.remove(7);
+        this.courseList.remove(WEEK_COUNT_DAYS);
         return courseList.get(0);
     }
 
@@ -77,7 +79,7 @@ public class SevenDaysAlg {
         for (Course cr : courseList) {
             sum = sum.add(cr.getOneCoinCourse());
         }
-        resRate = sum.divide(BigDecimal.valueOf(7), RoundingMode.HALF_UP);
+        resRate = sum.divide(BigDecimal.valueOf(WEEK_COUNT_DAYS), RoundingMode.HALF_UP);
         return resRate;
     }
 }
