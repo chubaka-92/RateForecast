@@ -152,12 +152,8 @@ public class Command {
     }
 
     private boolean validFormat(String format) {
-        if (format.equals(Commands.LIST.getLowerCommand())
-                || format.equals(Commands.GRAPHIC.getLowerCommand())) {
-            return true;
-        } else {
-            return false;
-        }
+            return format.equals(Commands.LIST.getLowerCommand())
+                    || format.equals(Commands.GRAPHIC.getLowerCommand());
     }
 
     //Метод checkCurrency для проверки значения валюты
