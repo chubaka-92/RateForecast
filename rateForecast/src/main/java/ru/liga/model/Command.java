@@ -47,7 +47,7 @@ public class Command {
             }
         }
 
-        if (currencies.size() == 0){  // есть функция isEmpty()
+        if (currencies.isEmpty()) {
             logger.debug("Валюта не определена");
             throw new RuntimeException("Валюта не определена");
         }
@@ -56,7 +56,7 @@ public class Command {
         for (int i = 0; i < currencies.size(); i++) {
             resCur[i] = currencies.get(i);
         }
-        logger.debug("Валюты определены: "+ Arrays.toString(resCur));
+        logger.debug("Валюты определены: " + Arrays.toString(resCur));
         return resCur;
     }
 
@@ -69,7 +69,7 @@ public class Command {
         logger.debug("Определение периода для расчета курса");
         logger.info("Определение периода для расчета курса");
         List<LocalDate> dates = new ArrayList<>();
-        for (int i = 1;!(arrAction[i].equals(Commands.ALG.getLowerCommand())); i++) {
+        for (int i = 1; !(arrAction[i].equals(Commands.ALG.getLowerCommand())); i++) {
             if (arrAction[i].equals(Commands.DATE.getLowerCommand())) {
                 if (arrAction[i + 1].equals(Commands.TOMORROW.getLowerCommand())) {
                     dates.add(LocalDate.now().plusDays(1));
@@ -101,7 +101,7 @@ public class Command {
                 break;
             }
         }
-        logger.debug("Алгоритм определен: "+ alg);
+        logger.debug("Алгоритм определен: " + alg);
         return alg.toString();
     }
 
@@ -115,7 +115,7 @@ public class Command {
         for (int i = 1; i < arrAction.length; i++) {
             if (arrAction[i].equals(Commands.OUTPUT.getLowerCommand())) {
                 checkOutPut(arrAction[i + 1]);
-                logger.debug("Формата результата определен: "+ arrAction[i + 1]);
+                logger.debug("Формата результата определен: " + arrAction[i + 1]);
                 return arrAction[i + 1];
             }
         }
@@ -125,50 +125,73 @@ public class Command {
     //Метод checkAlg для проверки значения алгоритма
     private void checkAlg(String alg) {
         logger.debug("Проверка алгоритма");
+        if (!validAlg(alg)) {
+            logger.debug("Алгоритм " + alg + " не определен");
+            throw new RuntimeException("Алгоритм " + alg + " не определен");
+        }
+    }
+
+    private boolean validAlg(String alg) {
         if (alg.equals(Commands.SEVENDAYS.getLowerCommand())
                 || alg.equals(Commands.MYST.getLowerCommand())
                 || alg.equals(Commands.LINEREG.getLowerCommand())
-                || alg.equals(Commands.LASTYEARS.getLowerCommand())) {   // отдельной фунуцией
+                || alg.equals(Commands.LASTYEARS.getLowerCommand())) {
+            return true;
         } else {
-            logger.debug("Алгоритм " + alg + " не определен");
-            throw new RuntimeException("Алгоритм " + alg + " не определен");
+            return false;
         }
     }
 
     //Метод checkOutPut для проверки значения формата результатов
     private void checkOutPut(String format) {
         logger.debug("Проверка формата результатов");
-        if (format.equals(Commands.LIST.getLowerCommand())
-                || format.equals(Commands.GRAPHIC.getLowerCommand())) {  // отдельной фунуцией
-        } else {
+        if (!validFormat(format)) {
             logger.debug("Формат результата" + format + " не определен");
             throw new RuntimeException("Формат результата " + format + " не определен");
         }
     }
 
+    private boolean validFormat(String format) {
+            return format.equals(Commands.LIST.getLowerCommand())
+                    || format.equals(Commands.GRAPHIC.getLowerCommand());
+    }
 
     //Метод checkCurrency для проверки значения валюты
     private void checkCurrency(String currency) {
         logger.debug("Проверка типа валюты");
+        if (!validCurrency(currency)) {
+            logger.debug("Валюта " + currency + " не определена");
+            throw new RuntimeException("Валюта " + currency + " не определена");
+        }
+    }
+
+    private boolean validCurrency(String currency) {
         if (currency.equals(Currencies.EUR.name())
                 || currency.equals(Currencies.BGN.name())
                 || currency.equals(Currencies.AMD.name())
                 || currency.equals(Currencies.USD.name())
-                || currency.equals(Currencies.TRY.name())) {  // отдельной фунуцией
+                || currency.equals(Currencies.TRY.name())) {
+            return true;
         } else {
-            logger.debug("Валюта " + currency + " не определена");
-            throw new RuntimeException("Валюта " + currency + " не определена");
+            return false;
         }
     }
 
     //Метод checkPeriods для проверки значения периода
     private void checkPeriods(String period) {
         logger.debug("Проверка периода");
-        if (period.equals(Commands.WEEK.getLowerCommand())
-                || period.equals(Commands.MONTH.getLowerCommand())) {  // отдельной фунуцией
-        } else {
+        if (!validPeriods(period)) {
             logger.debug("Период " + period + " не определен");
             throw new RuntimeException("Период " + period + " не определен");
+        }
+    }
+
+    private boolean validPeriods(String period) {
+        if (period.equals(Commands.WEEK.getLowerCommand())
+                || period.equals(Commands.MONTH.getLowerCommand())) {
+            return true;
+        } else {
+            return false;
         }
     }
 

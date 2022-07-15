@@ -56,7 +56,7 @@ public class CourseMakerService {
             coursesAll.put(currencies[cur], courses);
         }
 
-        if (command.getOutPut() != null && command.getOutPut().equals(Commands.GRAPHIC.getLowerCommand())) { //equals лучше перевернуть
+        if (command.getOutPut() != null && Commands.GRAPHIC.getLowerCommand().equals(command.getOutPut())) {
             createGraphic(coursesAll);
         }
         logger.info("Конец процесса вычесления прогноза курса");

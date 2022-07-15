@@ -1,95 +1,98 @@
-12:29:43.289  1707 [main] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot - создание бота
-12:29:43.304  1722 [main] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - создание бота
-12:30:06.651  25069 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - onUpdatesReceived Start
-12:30:06.652  25070 [CourseMaker_bot Telegram Executor] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot - onUpdatesReceived Start
-12:30:06.653  25071 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - Обработка запроса начата
-12:30:06.653  25071 [CourseMaker_bot Telegram Executor] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot - Обработка запроса начата
-12:30:06.653  25071 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - getUserName Start
-12:30:06.653  25071 [CourseMaker_bot Telegram Executor] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot - getUserName Start
-12:30:06.653  25071 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot -  getUserName end
-12:30:06.653  25071 [CourseMaker_bot Telegram Executor] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot -  getUserName end
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.service.CourseMakerService - Начало процесса вычесления прогноза курса
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] INFO  ru.liga.service.CourseMakerService - Начало процесса вычесления прогноза курса
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Определение валют для расчета курса
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение валют для расчета курса
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка типа валюты
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка типа валюты
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Валюты определены: [USD, EUR]
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Определение периода для расчета курса
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение периода для расчета курса
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка периода
-12:30:06.665  25083 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Генерация дат для расчета курсов
-12:30:06.681  25099 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Определение алгоритма для расчета курса
-12:30:06.681  25099 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение алгоритма для расчета курса
-12:30:06.681  25099 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка алгоритма
-12:30:06.681  25099 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Алгоритм определен: myst
-12:30:06.681  25099 [CourseMaker_bot Telegram Executor] INFO  ru.liga.mapper.ReadMapperCourse - Начало подготовки исторических данных по руксам валют
-12:30:06.681  25099 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.mapper.ReadMapperCourse - Начало подготовк исторических данных по руксам валют
-12:30:06.681  25099 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.mapper.ReadMapperCourse - Определение пути до файла с историей курсов валют
-12:30:06.712  25130 [CourseMaker_bot Telegram Executor] INFO  ru.liga.mapper.ReadMapperCourse - Подготовка исторических данных по руксам валют завершена
-12:30:06.712  25130 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.mapper.ReadMapperCourse - Подготовка исторических данных по руксам валют завершена
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] INFO  ru.liga.logic.MysticalAlg - Расчет прогноза курса по алгоритму Mystical
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Расчет прогноза курса по алгоритму Mystical
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] INFO  ru.liga.mapper.ReadMapperCourse - Начало подготовки исторических данных по руксам валют
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.mapper.ReadMapperCourse - Начало подготовк исторических данных по руксам валют
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.mapper.ReadMapperCourse - Определение пути до файла с историей курсов валют
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] INFO  ru.liga.mapper.ReadMapperCourse - Подготовка исторических данных по руксам валют завершена
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.mapper.ReadMapperCourse - Подготовка исторических данных по руксам валют завершена
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] INFO  ru.liga.logic.MysticalAlg - Расчет прогноза курса по алгоритму Mystical
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Расчет прогноза курса по алгоритму Mystical
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.MysticalAlg - Добавление рандомного нового курса
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Определение формата результата
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение формата результата
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка формата результатов
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Формата результата определен: graphic
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Определение формата результата
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение формата результата
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка формата результатов
-12:30:06.728  25146 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Формата результата определен: graphic
-12:30:06.759  25177 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.graphic.Graphic - Подготовка данных для расчета графика курса валют
-12:30:06.759  25177 [CourseMaker_bot Telegram Executor] INFO  ru.liga.graphic.Graphic - Подготовка данных для расчета графика курса валют
-12:30:06.774  25192 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.graphic.Graphic - Формирование графика курса валют
-12:30:06.774  25192 [CourseMaker_bot Telegram Executor] INFO  ru.liga.graphic.Graphic - Формирование графика курса валют
-12:30:06.774  25192 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.graphic.Graphic - Создание графика курса валют
-12:30:07.494  25912 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.service.CourseMakerService - Конец процесса вычесления прогноза курса
-12:30:07.494  25912 [CourseMaker_bot Telegram Executor] INFO  ru.liga.service.CourseMakerService - Конец процесса вычесления прогноза курса
-12:30:07.501  25919 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Определение формата результата
-12:30:07.502  25920 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение формата результата
-12:30:07.502  25920 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка формата результатов
-12:30:07.502  25920 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Формата результата определен: graphic
-12:30:07.507  25925 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.tgbot.ContentBot - setChatId was called. Определение Id чата для отправки сообщения: 361812473
-12:30:08.073  26491 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - Обработка запроса закончена
-12:30:08.073  26491 [CourseMaker_bot Telegram Executor] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot - Обработка запроса закончена
-12:30:08.073  26491 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot -  onUpdatesReceived end
-12:30:08.073  26491 [CourseMaker_bot Telegram Executor] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot -  onUpdatesReceived end
+10:15:08.701  3101 [main] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - создание бота
+10:15:50.103  44503 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - onUpdatesReceived Start
+10:15:50.110  44510 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - Обработка запроса начата
+10:15:50.110  44510 [CourseMaker_bot Telegram Executor] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot - getUserName Start
+10:15:50.111  44511 [CourseMaker_bot Telegram Executor] DEBUG o.t.t.e.b.c.TelegramLongPollingCommandBot -  getUserName end
+10:15:50.130  44530 [CourseMaker_bot Telegram Executor] INFO  ru.liga.service.CourseMakerService - Начало процесса вычесления прогноза курса
+10:15:50.131  44531 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Определение валют для расчета курса
+10:15:50.131  44531 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение валют для расчета курса
+10:15:50.132  44532 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка типа валюты
+10:15:50.138  44538 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Валюты определены: [USD]
+10:15:50.138  44538 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Определение периода для расчета курса
+10:15:50.138  44538 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение периода для расчета курса
+10:15:50.154  44554 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение алгоритма для расчета курса
+10:15:50.155  44555 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Проверка алгоритма
+10:15:50.156  44556 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.model.Command - Алгоритм определен: linereg
+10:15:50.165  44565 [CourseMaker_bot Telegram Executor] INFO  ru.liga.mapper.ReadMapperCourse - Начало подготовки исторических данных по руксам валют
+10:15:50.165  44565 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.mapper.ReadMapperCourse - Определение пути до файла с историей курсов валют
+10:15:50.198  44598 [CourseMaker_bot Telegram Executor] INFO  ru.liga.mapper.ReadMapperCourse - Подготовка исторических данных по руксам валют завершена
+10:15:50.209  44609 [CourseMaker_bot Telegram Executor] INFO  ru.liga.logic.LinearRegressionAlg - Расчет прогноза курса по алгоритму Mystical
+10:15:50.209  44609 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.209  44609 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.216  44616 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.216  44616 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.216  44616 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.216  44616 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.216  44616 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.216  44616 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.217  44617 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.217  44617 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.217  44617 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.217  44617 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.217  44617 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.218  44618 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.218  44618 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.218  44618 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.218  44618 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.218  44618 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.219  44619 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.219  44619 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.219  44619 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.219  44619 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.219  44619 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Добавление нового курса
+10:15:50.219  44619 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.logic.LinearRegressionAlg - Расчет стоимости валюты
+10:15:50.220  44620 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение формата результата
+10:15:50.220  44620 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение формата результата
+10:15:50.220  44620 [CourseMaker_bot Telegram Executor] INFO  ru.liga.service.CourseMakerService - Конец процесса вычесления прогноза курса
+10:15:50.222  44622 [CourseMaker_bot Telegram Executor] INFO  ru.liga.model.Command - Определение формата результата
+10:15:50.275  44675 [CourseMaker_bot Telegram Executor] DEBUG ru.liga.tgbot.ContentBot - setChatId was called. Определение Id чата для отправки сообщения: 361812473
+10:15:50.435  44835 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - Обработка запроса закончена
+10:15:50.435  44835 [CourseMaker_bot Telegram Executor] INFO  o.t.t.e.b.c.TelegramLongPollingCommandBot - onUpdatesReceived end
+11:09:10.215  3244615 [CourseMaker_bot Telegram Connection] ERROR o.t.t.u.DefaultBotSession - Connect to api.telegram.org:443 [api.telegram.org/149.154.167.220] failed: Connection refused: connect
+org.apache.http.conn.HttpHostConnectException: Connect to api.telegram.org:443 [api.telegram.org/149.154.167.220] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:250)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:189)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 10 common frames omitted
+11:24:25.321  4159721 [CourseMaker_bot Telegram Connection] ERROR o.t.t.u.DefaultBotSession - Connect to api.telegram.org:443 [api.telegram.org/149.154.167.220] failed: Connection refused: connect
+org.apache.http.conn.HttpHostConnectException: Connect to api.telegram.org:443 [api.telegram.org/149.154.167.220] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:250)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:189)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:368)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 10 common frames omitted

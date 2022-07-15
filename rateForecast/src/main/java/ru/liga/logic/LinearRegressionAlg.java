@@ -15,6 +15,7 @@ public class LinearRegressionAlg {
     private final List<Course> courseList;
     private final List<LocalDate> dates;
 
+    private static final int PERIOD_COUNT_DAYS = 7;
     public LinearRegressionAlg(List<LocalDate> dates, List<Course> courseSourse) {
         this.dates = dates;
         this.courseList = courseSourse;
@@ -43,7 +44,7 @@ public class LinearRegressionAlg {
     private Course addNewCourse() {
         logger.debug("Добавление нового курса");
         this.courseList.add(0, new Course(1, this.courseList.get(0).getDay().plusDays(1), getNewRate(courseList)));
-        this.courseList.remove(30);
+        this.courseList.remove(PERIOD_COUNT_DAYS);
         return courseList.get(0);
     }
 
