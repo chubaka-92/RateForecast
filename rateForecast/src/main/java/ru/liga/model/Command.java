@@ -47,7 +47,7 @@ public class Command {
             }
         }
 
-        if (currencies.size() == 0){
+        if (currencies.size() == 0){  // есть функция isEmpty()
             logger.debug("Валюта не определена");
             throw new RuntimeException("Валюта не определена");
         }
@@ -128,7 +128,7 @@ public class Command {
         if (alg.equals(Commands.SEVENDAYS.getLowerCommand())
                 || alg.equals(Commands.MYST.getLowerCommand())
                 || alg.equals(Commands.LINEREG.getLowerCommand())
-                || alg.equals(Commands.LASTYEARS.getLowerCommand())) {
+                || alg.equals(Commands.LASTYEARS.getLowerCommand())) {   // отдельной фунуцией
         } else {
             logger.debug("Алгоритм " + alg + " не определен");
             throw new RuntimeException("Алгоритм " + alg + " не определен");
@@ -139,7 +139,7 @@ public class Command {
     private void checkOutPut(String format) {
         logger.debug("Проверка формата результатов");
         if (format.equals(Commands.LIST.getLowerCommand())
-                || format.equals(Commands.GRAPHIC.getLowerCommand())) {
+                || format.equals(Commands.GRAPHIC.getLowerCommand())) {  // отдельной фунуцией
         } else {
             logger.debug("Формат результата" + format + " не определен");
             throw new RuntimeException("Формат результата " + format + " не определен");
@@ -154,7 +154,7 @@ public class Command {
                 || currency.equals(Currencies.BGN.name())
                 || currency.equals(Currencies.AMD.name())
                 || currency.equals(Currencies.USD.name())
-                || currency.equals(Currencies.TRY.name())) {
+                || currency.equals(Currencies.TRY.name())) {  // отдельной фунуцией
         } else {
             logger.debug("Валюта " + currency + " не определена");
             throw new RuntimeException("Валюта " + currency + " не определена");
@@ -165,7 +165,7 @@ public class Command {
     private void checkPeriods(String period) {
         logger.debug("Проверка периода");
         if (period.equals(Commands.WEEK.getLowerCommand())
-                || period.equals(Commands.MONTH.getLowerCommand())) {
+                || period.equals(Commands.MONTH.getLowerCommand())) {  // отдельной фунуцией
         } else {
             logger.debug("Период " + period + " не определен");
             throw new RuntimeException("Период " + period + " не определен");

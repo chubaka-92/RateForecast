@@ -63,7 +63,7 @@ public class SevenDaysAlg {
         logger.debug("Добавление нового курса");
         BigDecimal resRate = getNewRate(this.courseList);
         this.courseList.add(0, new Course(1, this.courseList.get(0).getDay().plusDays(1), resRate));
-        this.courseList.remove(7);
+        this.courseList.remove(7); // магическое число
         return courseList.get(0);
     }
 
